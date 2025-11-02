@@ -50,25 +50,20 @@ Mapping/
 
 ---
 
-## Environnement créé automatiquement
-
----
-
-## 🔧 Étapes du pipeline
+## Étapes du pipeline
 
 ### `install_RNAseq_Maurel.sh`
+
+- Crée l'arborescence
 - Crée l’environnement conda
-    **conda env : `rnaseq`**
-    Outils installés automatiquement :FastQC, Trimmomatic, STAR, Samtools,   Subread/featureCounts, Perl
-- Télécharge les FASTQ (Zenodo)
-- Télécharge la séquence FASTA du chr18 + annotation (fichier GTF)
-- Décompresse le FASTA & GTF du génome de référence
-- Construit l’index STAR du génome de référence
+    - **conda env : `rnaseq`**
+    - Outils installés automatiquement :FastQC, Trimmomatic, STAR, Samtools,   Subread/featureCounts, Perl
+- Télécharge les FASTQ 
+- Télécharge la séquence FASTA du génome de référence (chr18) + annotation (fichier GTF)
+- Construit l’index du génome de référence avec STAR
 
 ### `run_RNAseq_Maurel.sh`
-- Nettoyage des reads (Trimmomatic)
-- Alignement STAR (BAM trié)
-- Indexation BAM
-- Comptage par gène (featureCounts)
-- Conversion gene_id → gene_name
-- Filtration chr18
+- Trimming des reads avec Trimmomatic
+- Alignement avec STAR des reads sur le génome de référence (génération de fichiers .bam triés)
+- Indexation des fichiers .bam
+- Génération d'une table de comptage ("count_table/table_gene_name_counts.txt") en utilisant successivement featurecounts, perl et awk.
