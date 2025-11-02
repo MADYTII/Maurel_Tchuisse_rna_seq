@@ -172,4 +172,8 @@ ${count_table_dir}/${gene_id_gene_name_equivalence_file/.txt/_sorted.txt} | grep
 awk '{print $NF " " $6 " " $7 " " $8 " " $9 " " $10  " " $11 " " $12 }' ${count_table_dir}/temp3 > ${count_table_dir}/${count_table_gene_name_file}
  
 conda deactivate
-echo -e "\nFin de la génération des tables de comptages\n"
+echo -e "\nFin de la génération de la table de comptage\n"
+
+#Vérification des comptages pour le gène CDH2
+echo -e "\nVérification des comptages pour le gène CDH2\n"
+grep "CDH2" ${count_table_dir}/${count_table_gene_name_file}
