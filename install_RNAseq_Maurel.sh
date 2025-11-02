@@ -72,10 +72,11 @@ echo -e "\n Fin de la création des répertoires \n"
 # contenant les outils nécessaires pour l'analyse
 eval "$(conda shell.bash hook)" #Activation des fonctions de conda dans le shell
 
+
 echo -e "\n Création de l'environnement 'rnaseq' qui
 contient les outils fastqc, trimmomatic, samtools, star, subread et perl \n"
 
-conda create -y -q -n rnaseq fastqc trimmomatic star samtools subread perl
+conda create -y -q -n rnaseq -c conda-forge -c bioconda fastqc trimmomatic star samtools subread perl openjdk
 
 echo -e "\n Fin de création de l'environnement rnaseq contenant les outils \n"
 
