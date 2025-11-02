@@ -42,7 +42,7 @@ Mapping/
 
 - **sequence_data/** — contient les fichiers FASTQ bruts téléchargés.  
 - **trimmomatic_results/** — contient les FASTQ nettoyés après trimming.  
-- **count_table/** — contient la table de comptage finale "table_gene_name_counts.txt".  
+- **count_table/** — contient la table de comptage finale **"table_gene_name_counts.txt"**.  
 - **Mapping/reference_genome/** — contient le fichier FASTA du génome de référence.  
 - **Mapping/reference_genome_annotation/** — contient l’annotation du génome de référence.  
 - **Mapping/reference_genome_index/** — contient l’index généré pour le génome de référence.  
@@ -66,4 +66,4 @@ Mapping/
 - Trimming des reads avec Trimmomatic
 - Alignement avec STAR des reads sur le génome de référence (génération de fichiers .bam triés)
 - Indexation des fichiers .bam
-- Génération d'une table de comptage ("count_table/table_gene_name_counts.txt") en utilisant successivement featurecounts, perl et awk.
+- Génération d'une **table de comptage ("count_table/table_gene_name_counts.txt")** en utilisant successivement featurecounts, perl et awk.
